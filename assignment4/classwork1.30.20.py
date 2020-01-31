@@ -5,9 +5,32 @@ def main():
 	count = 0 
 	line = filehand.readline()
 	while line: 
-		count += 1
-		filehand.readline()
-	print(count)
+		count+=1 
+		line = filehand.readline()
+	print("The line count is:",count)
+	
 main()
+def word_count():
+	from sys import argv
+	scipt, filename = argv
+	filehand = open(filename)
+	words=0
+	for line in filehand:
+		wordslist=line.split()
+		words=words+len(wordslist)
+	print("The word count is:", words)
+	
+word_count()
+
+def character_count():
+	from sys import argv 
+	script, filename = argv 
+	filehand = open(filename)
+	all_characters = filehand.read()
+	characters = len(all_characters)
+
+	print("The character count is:", characters) 
+	
+character_count()
 
 #count lines, words and characters(including white spaces) should be 6, 69, 446) 
